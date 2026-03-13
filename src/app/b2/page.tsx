@@ -10,7 +10,7 @@ export default function B2First() {
   };
 
   return (
-    <div style={{ padding: '120px 0', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
+    <div style={{ padding: 'clamp(80px, 10vw, 120px) 0', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
       <main className="container" style={{ maxWidth: '900px' }}>
         <motion.div 
           initial="hidden"
@@ -21,7 +21,7 @@ export default function B2First() {
             ← Volver a Cambridge
           </Link>
 
-          <h1 className="heading" style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '1rem' }}>B2 First (FCE)</h1>
+          <h1 className="heading" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: 'var(--primary)', marginBottom: '1rem' }}>B2 First (FCE)</h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '3rem', lineHeight: 1.6 }}>
             Clases grupales de nivel intermedio alto enfocadas en obtener la certificación Cambridge FIRST. Las clases grupales son con grupos reducidos de máximo 6 alumnos.
           </p>

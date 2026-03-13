@@ -151,6 +151,44 @@
   text-align: left;
 }
 
+.pricingToggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.toggleButton {
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.toggleButton:hover {
+  color: var(--primary);
+}
+
+.toggleButton.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: white;
+  box-shadow: 0 6px 20px rgba(176, 91, 59, 0.35);
+}
+
 .pricingCards {
   display: flex;
   justify-content: center;
@@ -348,30 +386,6 @@
   margin: 0;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 1024px) {
-  .pricingCardFeatured {
-    transform: scale(1);
-  }
-  .pricingCardFeatured:hover {
-    transform: translateY(-10px);
-  }
-}
-@media (max-width: 968px) {
-  .heroContent {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .heroText h1 {
-    font-size: 2.5rem;
-  }
-  
-  .navLinks {
-    display: none; /* Simplification for mobile in this step */
-  }
-}
-
 /* Method Section */
 .method {
   padding: 100px 0;
@@ -566,18 +580,200 @@
   opacity: 0.8;
 }
 
+/* --- Responsive Adjustments --- */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .pricingCardFeatured {
+    transform: scale(1);
+  }
+  .pricingCardFeatured:hover {
+    transform: translateY(-10px);
+  }
+  .featuredPriceCard {
+    transform: scale(1);
+  }
+  .featuredPriceCard:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 968px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .heroText {
+    padding: 1.5rem;
+  }
+
+  .heroText h1 {
+    font-size: 2.2rem;
+  }
+
+  .heroText p {
+    font-size: 1rem;
+  }
+
+  .ctaGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .methodContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .methodImageWrapper {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .methodText h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+  }
+
   .aboutContent {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .aboutDecoration {
+    height: 250px;
+  }
+  
+  .decorationCircle {
+    width: 220px;
+    height: 220px;
   }
   
   .stats {
     justify-content: center;
   }
-  
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .cambridgeGrids {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 0;
+    min-height: auto;
+  }
+
+  .heroText h1 {
+    font-size: 1.8rem;
+  }
+
+  .method {
+    padding: 60px 0;
+  }
+
+  .cambridge {
+    padding: 60px 0;
+  }
+
+  .about {
+    padding: 60px 0;
+  }
+
+  .testSection {
+    padding: 60px 0;
+  }
+
   .testCard {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .testCard h2 {
+    font-size: 1.8rem;
+  }
+
+  .cambridgeGrids {
+    grid-template-columns: 1fr;
+  }
+
+  .levelCard {
+    padding: 1.5rem;
+  }
+
+  .pricingSection {
+    padding: 60px 0;
+  }
+
+  .pricingToggle {
+    flex-direction: row;
+  }
+
+  .toggleButton {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .pricingCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .priceCardModern {
+    max-width: 100%;
+  }
+
+  .priceCardHeader h3 {
+    font-size: 1.25rem;
+  }
+
+  .price span {
+    font-size: 2.5rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+
+  .aboutText h2 {
+    font-size: 2rem;
+  }
+
+  .faqSection {
+    padding: 60px 0;
+  }
+
+  .faqQuestionRow {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .faqQuestion {
+    font-size: 1rem;
+  }
+
+  .faqAnswer {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1.75rem;
+  }
+
+  .methodText h2 {
+    font-size: 1.75rem;
   }
 }

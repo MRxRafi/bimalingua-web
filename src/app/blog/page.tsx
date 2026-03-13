@@ -50,7 +50,7 @@ export default function Blog() {
   ];
 
   return (
-    <div style={{ padding: '120px 0', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
+    <div style={{ padding: 'clamp(80px, 10vw, 120px) 0', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
       <main className="container">
         <motion.div 
           initial="hidden"
@@ -58,13 +58,13 @@ export default function Blog() {
           variants={fadeInUp}
           style={{ textAlign: 'center', marginBottom: '4rem' }}
         >
-          <h1 className="heading" style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '1rem' }}>Blog de Bimalingua</h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+          <h1 className="heading" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--primary)', marginBottom: '1rem' }}>Blog de Bimalingua</h1>
+          <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
             Consejos, técnicas de estudio y todo lo que necesitas saber para dominar el inglés y aprobar tus exámenes Cambridge.
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(350px, 100%), 1fr))', gap: '2rem' }}>
           {blogPosts.map((post, index) => (
             <motion.div 
               key={post.id}

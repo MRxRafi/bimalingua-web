@@ -1,6 +1,7 @@
 import * as motion from "framer-motion/client";
 import styles from "../page.module.css";
-import Link from 'next/link'; // Added import for Link component
+import cambridgeStyles from "./cambridge.module.css";
+import Link from 'next/link';
 
 export default function CambridgePage() {
   return (
@@ -8,23 +9,23 @@ export default function CambridgePage() {
       <main>
         <section className={styles.cambridge} style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div className="container">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className={styles.sectionHeader}
             >
-              <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem' }} className="accent">Exámenes de Cambridge</h1>
-              <p style={{ fontSize: '1.2rem', opacity: 0.8, maxWidth: '600px', margin: '0 auto' }}>Supera tu examen oficial con una preparación estratégica, simulacros reales y material actualizado. Elige tu nivel y empecemos.</p>
+              <h1 className={`accent ${cambridgeStyles.pageTitle}`}>Exámenes de Cambridge</h1>
+              <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', opacity: 0.8, maxWidth: '600px', margin: '0 auto' }}>Supera tu examen oficial con una preparación estratégica, simulacros reales y material actualizado. Elige tu nivel y empecemos.</p>
             </motion.div>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '4rem' }}>
-              <motion.div 
-                whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(176, 91, 59, 0.15)' }} 
-                style={{ 
-                  background: 'linear-gradient(180deg, var(--surface) 0%, var(--surface-light) 100%)', 
-                  padding: '2.5rem 2rem', 
-                  borderRadius: '24px', 
-                  textAlign: 'center', 
+
+            <div className={cambridgeStyles.cardsGrid}>
+              <motion.div
+                whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(176, 91, 59, 0.15)' }}
+                style={{
+                  background: 'linear-gradient(180deg, var(--surface) 0%, var(--surface-light) 100%)',
+                  padding: '2.5rem 2rem',
+                  borderRadius: '24px',
+                  textAlign: 'center',
                   border: '1px solid var(--border)',
                   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
                   transition: 'all 0.3s ease'
@@ -35,22 +36,21 @@ export default function CambridgePage() {
                 </div>
                 <h3 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>B1 Preliminary (PET)</h3>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', minHeight: '60px' }}>Nivel intermedio. Ideal para empezar a comunicarte con confianza en entornos reales.</p>
-                <Link href="/b1" className="btn btn-secondary" style={{ width: '100%', background: 'transparent', color: 'var(--primary)', border: '2px solid var(--primary)', display: 'block' }}>Ver programa complet0 →</Link>
+                <Link href="/b1" className="btn btn-secondary" style={{ width: '100%', background: 'transparent', color: 'var(--primary)', border: '2px solid var(--primary)', display: 'block' }}>Ver programa completo →</Link>
               </motion.div>
 
-              <motion.div 
-                whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(176, 91, 59, 0.25)' }} 
-                style={{ 
-                  background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)', 
-                  padding: '2.5rem 2rem', 
-                  borderRadius: '24px', 
-                  textAlign: 'center', 
+              <motion.div
+                whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(176, 91, 59, 0.25)' }}
+                className={cambridgeStyles.featuredCard}
+                style={{
+                  background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)',
+                  padding: '2.5rem 2rem',
+                  borderRadius: '24px',
+                  textAlign: 'center',
                   border: 'none',
                   position: 'relative',
                   boxShadow: '0 15px 35px rgba(176, 91, 59, 0.2)',
                   color: 'white',
-                  transform: 'scale(1.05)',
-                  transition: 'all 0.3s ease',
                   zIndex: 2
                 }}
               >
@@ -63,13 +63,13 @@ export default function CambridgePage() {
                 <Link href="/b2" className="btn btn-primary" style={{ width: '100%', background: 'white', color: 'var(--primary)', display: 'block' }}>Descubrir el curso →</Link>
               </motion.div>
 
-              <motion.div 
-                whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(176, 91, 59, 0.15)' }} 
-                style={{ 
-                  background: 'linear-gradient(180deg, var(--surface) 0%, var(--surface-light) 100%)', 
-                  padding: '2.5rem 2rem', 
-                  borderRadius: '24px', 
-                  textAlign: 'center', 
+              <motion.div
+                whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(176, 91, 59, 0.15)' }}
+                style={{
+                  background: 'linear-gradient(180deg, var(--surface) 0%, var(--surface-light) 100%)',
+                  padding: '2.5rem 2rem',
+                  borderRadius: '24px',
+                  textAlign: 'center',
                   border: '1px solid var(--border)',
                   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
                   transition: 'all 0.3s ease'
@@ -83,7 +83,7 @@ export default function CambridgePage() {
                 <Link href="/c1" className="btn btn-secondary" style={{ width: '100%', background: 'transparent', color: 'var(--primary)', border: '2px solid var(--primary)', display: 'block' }}>Ver detalles del nivel →</Link>
               </motion.div>
             </div>
-            
+
             <div style={{ textAlign: 'center', marginTop: '4rem' }}>
               <a href="/#test" className="btn btn-primary">No sé qué nivel elegir, ¡haré el test!</a>
             </div>

@@ -8,6 +8,16 @@
   --foreground: #1A1A1A;
   --white: #FFFFFF;
   
+  /* Surfaces */
+  --surface: #F5F0EB;
+  --surface-light: #EDE5DC;
+  --border: rgba(0, 0, 0, 0.08);
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
+  --text-tertiary: #999999;
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 40px rgba(176, 91, 59, 0.15);
+  
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.3);
@@ -16,16 +26,10 @@
   /* Typography */
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
-}
+  --font-heading: var(--font-playfair);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F0F0F;
-    --foreground: #EDEDED;
-    --glass-bg: rgba(20, 20, 20, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  }
+  /* Force light mode */
+  color-scheme: light;
 }
 
 * {
@@ -75,6 +79,12 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
 .btn {

@@ -1,7 +1,8 @@
 .header {
-  height: 90px;
+  min-height: 90px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -17,6 +18,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-height: 90px;
 }
 
 .brandContainer {
@@ -78,4 +80,121 @@
 
 .navLinks a:hover::after {
   width: 100%;
+}
+
+/* Hamburger button */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  transition: background 0.2s;
+}
+
+.menuToggle:hover {
+  background: rgba(176, 91, 59, 0.08);
+}
+
+.hamburgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--foreground);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.menuToggleOpen .hamburgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggleOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuToggleOpen .hamburgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile dropdown menu */
+.mobileMenu {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  opacity: 0;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.mobileMenuOpen {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.mobileNavLinks {
+  list-style: none;
+  padding: 0.5rem 0 1rem;
+  margin: 0;
+}
+
+.mobileNavLinks li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.8;
+  transition: all 0.2s;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileNavLinks li:last-child a {
+  border-bottom: none;
+}
+
+.mobileNavLinks li a:hover {
+  color: var(--primary);
+  opacity: 1;
+  padding-left: 2rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    min-height: 70px;
+  }
+
+  .header {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .headerLogoIcon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
 }

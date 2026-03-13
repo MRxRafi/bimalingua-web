@@ -2,23 +2,19 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import styles from "./sobre-mi.module.css";
 
 export default function SobreMi() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
-    <div style={{ backgroundColor: 'var(--background)' }}>
-      <main className="container" style={{ paddingTop: '120px', paddingBottom: '1S20px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 400px) 1fr', gap: '5rem', alignItems: 'start' }}>
+    <div className={styles.pageWrapper}>
+      <main className="container">
+        <div className={styles.layout}>
 
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ position: 'sticky', top: '120px' }}
+            className={styles.sidebar}
           >
             <div style={{ position: 'relative', borderRadius: '32px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(176,91,59,0.2)', border: '1px solid var(--border)' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(176,91,59,0.4), transparent)', zIndex: 1 }}></div>
@@ -68,8 +64,8 @@ export default function SobreMi() {
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{ paddingTop: '2rem' }}
           >
-            <h2 className="heading" style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '2rem' }}>
-              ¡Hola! Soy Angie... <br /><span style={{ color: 'var(--text-secondary)', fontSize: '2.5rem' }}>y me encantan los idiomas.</span>
+            <h2 className="heading" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--primary)', marginBottom: '2rem' }}>
+              ¡Hola! Soy Angie... <br /><span style={{ color: 'var(--text-secondary)', fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>y me encantan los idiomas.</span>
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
@@ -83,7 +79,7 @@ export default function SobreMi() {
 
             <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: '4rem 0' }} />
 
-            <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '2rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '2rem' }}>
               ¿Cómo he llegado hasta aquí?
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
@@ -98,11 +94,11 @@ export default function SobreMi() {
               </p>
             </div>
 
-            <div style={{ marginTop: '5rem', padding: '3rem', borderRadius: '32px', background: 'var(--surface)', border: '1px solid var(--border)', boxShadow: '0 20px 40px rgba(0,0,0,0.02)' }}>
-              <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '3rem', textAlign: 'center' }}>
+            <div style={{ marginTop: '5rem', padding: 'clamp(1.5rem, 4vw, 3rem)', borderRadius: '32px', background: 'var(--surface)', border: '1px solid var(--border)', boxShadow: '0 20px 40px rgba(0,0,0,0.02)' }}>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '3rem', textAlign: 'center' }}>
                 Mis Valores <span style={{ color: 'var(--primary)' }}>.</span>
               </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+              <div className={styles.valuesGrid}>
                 <div>
                   <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: 'var(--primary)' }}>✦</span> Enfocarnos en tu objetivo</h3>
                   <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>Sea cual sea tu meta, estoy aquí para ayudarte a alcanzarla. Trabajaremos juntos con constancia, adaptando cada clase para que estés más cerca de conseguirlo día a día.</p>
