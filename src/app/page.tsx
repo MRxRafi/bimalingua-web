@@ -354,7 +354,7 @@ export default function Home() {
             >
               <h2>¿Tu nivel de inglés te está frenando?</h2>
               <p>Haz tu test de nivel GRATIS y descubre cómo puedes mejorar hoy mismo.</p>
-              <button className="btn btn-primary">Empezar el test ahora</button>
+              <Link href="/test" className="btn btn-primary">Empezar el test ahora</Link>
             </motion.div>
           </div>
         </section>
