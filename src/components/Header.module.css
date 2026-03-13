@@ -1,0 +1,81 @@
+.header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brandContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.headerLogoIcon {
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brandContainer:hover .headerLogoIcon {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  margin-left: auto;
+}
+
+.navLinks a {
+  font-weight: 500;
+  font-size: 1.05rem;
+  opacity: 0.7;
+  color: var(--foreground);
+  transition: opacity 0.3s ease, color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navLinks a:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
