@@ -4,9 +4,9 @@
 
 /* Hero Section */
 .hero {
-  padding: 80px 0;
+  padding: clamp(40px, 10vw, 80px) 0;
   background: radial-gradient(circle at top right, rgba(176, 91, 59, 0.05), transparent);
-  min-height: 80vh;
+  min-height: clamp(60vh, 100vw, 80vh);
   display: flex;
   align-items: center;
 }
@@ -25,14 +25,16 @@
 }
 
 .heroText h1 {
-  font-size: 3.5rem;
+  font-size: var(--font-size-h1);
   margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
 .heroText p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.8;
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  max-width: 600px;
 }
 
 .accent {
@@ -54,7 +56,7 @@
 
 /* --- Pricing Section --- */
 .pricingSection {
-  padding: 8rem 0;
+  padding: clamp(4rem, 10vw, 8rem) 0;
   background-color: var(--surface);
   position: relative;
 }
@@ -71,11 +73,13 @@
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: 24px;
-  padding: 3rem 2rem;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
   text-align: center;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricingCard:hover {
@@ -316,7 +320,7 @@
 
 /* --- FAQ Section --- */
 .faqSection {
-  padding: 8rem 0;
+  padding: clamp(4rem, 10vw, 8rem) 0;
   background-color: var(--background);
 }
 
@@ -388,7 +392,7 @@
 
 /* Method Section */
 .method {
-  padding: 100px 0;
+  padding: clamp(4rem, 10vw, 100px) 0;
   background-color: var(--white);
 }
 
@@ -423,8 +427,10 @@
 }
 
 .featureCard {
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -441,7 +447,7 @@
 
 /* Cambridge Section */
 .cambridge {
-  padding: 100px 0;
+  padding: clamp(4rem, 10vw, 100px) 0;
   background: linear-gradient(to bottom, transparent, rgba(176, 91, 59, 0.03));
 }
 
@@ -461,9 +467,12 @@
 }
 
 .levelCard {
-  padding: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;
   transition: transform 0.3s ease;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
 }
 
 .levelCard:hover {
@@ -482,7 +491,7 @@
 
 /* About Section */
 .about {
-  padding: 100px 0;
+  padding: clamp(4rem, 10vw, 100px) 0;
 }
 
 .aboutContent {
@@ -564,9 +573,12 @@
 }
 
 .testCard {
-  padding: 4rem;
-  max-width: 800px;
+  padding: clamp(2rem, 8vw, 4rem);
+  max-width: 900px;
   margin: 0 auto;
+  background: var(--surface-light);
+  border-radius: 40px;
+  border: 1px solid var(--border);
 }
 
 .testCard h2 {
@@ -594,16 +606,92 @@
 }
 
 .sectionHeader p {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
   color: var(--text-secondary);
   margin-bottom: 2.5rem;
   line-height: 1.6;
 }
 
-.testCard p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.8;
+.faqSectionWrapper {
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  background-color: var(--surface);
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqHeader {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faqItemDetails {
+  background-color: var(--background);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faqItemDetails:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.faqSummary {
+  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.25rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faqArrow {
+  color: var(--primary);
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.faqItemDetails[open] .faqArrow {
+  transform: rotate(180deg);
+}
+
+.faqContent {
+  margin-top: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.btnFull {
+  width: 100%;
+  text-align: center;
+}
+
+.darkBtn {
+  background: var(--foreground) !important;
+  color: var(--white) !important;
+  border: none !important;
+}
+
+.darkBtn:hover {
+  background: var(--primary) !important;
+}
+
+.groupPlanFeatured {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 /* --- Responsive Adjustments --- */

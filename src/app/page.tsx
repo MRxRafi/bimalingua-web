@@ -51,7 +51,7 @@ export default function Home() {
                 <Link href="#contacto" className="btn btn-primary">
                   Reserva tu prueba gratuita
                 </Link>
-                <Link href="/cambridge" className="btn btn-secondary" style={{ backgroundColor: 'transparent', color: 'var(--primary)', border: '2px solid var(--primary)' }}>
+                <Link href="/cambridge" className="btn btn-secondary">
                   Ver niveles
                 </Link>
               </div>
@@ -221,7 +221,7 @@ export default function Home() {
                       <li>Simulacros de examen</li>
                     </ul>
                     <div className={styles.priceCardFooter}>
-                      <Link href="#contacto" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>Empezar ahora</Link>
+                      <Link href="#contacto" className={`${styles.btnFull} btn btn-primary`}>Empezar ahora</Link>
                     </div>
                   </motion.div>
                   <motion.div className={`${styles.priceCardModern} ${styles.featuredPriceCard}`} whileHover={{ y: -5 }}>
@@ -239,7 +239,7 @@ export default function Home() {
                       <li>Seguimiento personalizado</li>
                     </ul>
                     <div className={styles.priceCardFooter}>
-                      <Link href="#contacto" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', background: 'var(--foreground)', color: 'var(--background)' }}>Comprar bono</Link>
+                      <Link href="#contacto" className={`${styles.btnFull} ${styles.darkBtn} btn btn-primary`}>Comprar bono</Link>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -254,7 +254,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className={styles.pricingCards}
                 >
-                  <motion.div className={`${styles.priceCardModern} ${styles.featuredPriceCard}`} style={{ maxWidth: '500px', margin: '0 auto' }} whileHover={{ y: -5 }}>
+                  <motion.div className={`${styles.priceCardModern} ${styles.featuredPriceCard} ${styles.groupPlanFeatured}`} whileHover={{ y: -5 }}>
                     <div className={styles.priceCardHeader}>
                       <h3>Mensualidad Grupal</h3>
                       <p className={styles.price}><span>75€</span>/mes</p>
@@ -268,7 +268,7 @@ export default function Home() {
                       <li>Material de estudio online incluido</li>
                     </ul>
                     <div className={styles.priceCardFooter}>
-                      <Link href="#contacto" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>Unirme a un grupo</Link>
+                      <Link href="#contacto" className={`${styles.btnFull} btn btn-primary`}>Unirme a un grupo</Link>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -277,19 +277,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="faq" style={{ padding: '6rem 0', backgroundColor: 'var(--surface)' }}>
-          <div className="container" style={{ maxWidth: '800px' }}>
+        <section id="faq" className={styles.faqSectionWrapper}>
+          <div className={`${styles.faqContainer} container`}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              style={{ textAlign: 'center', marginBottom: '3rem' }}
+              className={styles.faqHeader}
             >
-              <h2 className="heading" style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
-              <p style={{ color: 'var(--text-secondary)' }}>Resuelve tus dudas generales de Bimalingua.</p>
+              <h2 className="heading">Preguntas Frecuentes</h2>
+              <p>Resuelve tus dudas generales de Bimalingua.</p>
             </motion.div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className={styles.faqList}>
               {[
                 { q: "¿Se puede recuperar una clase si no asisto un día?", a: "En el caso de que un alumno no pueda asistir a una clase, ésta se dejará grabada para que pueda visualizarla y no pierda el ritmo de la clase. Si es una clase particular, si avisas con 24h de antelación se puede reprogramar." },
                 { q: "¿Es necesario comprar algún libro?", a: "No es necesario. Todo el material está incluido y se proyectará en la pantalla durante la clase. La teoría, junto con los ejercicios, se mandarán a los alumnos por e-mail." },
@@ -304,13 +304,13 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  style={{ backgroundColor: 'var(--background)', padding: '1.5rem', borderRadius: '16px', border: '1px solid var(--border)', cursor: 'pointer' }}
+                  className={styles.faqItemDetails}
                 >
-                  <summary style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)', outline: 'none', listStyle: 'none', display: 'flex', justifyContent: 'space-between' }}>
+                  <summary className={styles.faqSummary}>
                     {faq.q}
-                    <span style={{ color: 'var(--primary)' }}>↓</span>
+                    <span className={styles.faqArrow}>↓</span>
                   </summary>
-                  <p style={{ marginTop: '1rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  <p className={styles.faqContent}>
                     {faq.a}
                   </p>
                 </motion.details>

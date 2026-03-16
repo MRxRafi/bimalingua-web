@@ -1,5 +1,5 @@
 .pageWrapper {
-  padding-top: 100px;
+  padding-top: clamp(80px, 12vw, 120px);
   background-color: var(--background);
 }
 
@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: clamp(3rem, 10vw, 6rem);
 }
 
 .imageWrapper {
@@ -18,7 +18,7 @@
   border-radius: 40px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
   aspect-ratio: 4/5;
 }
 
@@ -31,29 +31,30 @@
 
 .imageInfo {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
+  bottom: clamp(1.5rem, 5vw, 2.5rem);
+  left: clamp(1.5rem, 5vw, 2.5rem);
+  right: clamp(1.5rem, 5vw, 2.5rem);
   z-index: 2;
   color: white;
   text-align: left;
 }
 
 .imageInfo h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
   margin: 0;
+  line-height: 1.1;
 }
 
 .socialLinks {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: clamp(2.5rem, 8vw, 4rem);
   justify-content: center;
 }
 
 .socialIcon {
-  width: 56px;
-  height: 56px;
+  width: clamp(48px, 8vw, 60px);
+  height: clamp(48px, 8vw, 60px);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -71,33 +72,26 @@
 .whatsapp { background: #25D366; }
 
 .contentSection {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 .valuesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(3rem, 8vw, 5rem);
 }
 
 .valueCard {
-  padding: 2.5rem;
-  border-radius: 24px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 
 @media (max-width: 640px) {
-  .pageWrapper {
-    padding-top: 60px;
-  }
-  
   .imageWrapper {
-    max-width: 100%;
-    border-radius: 24px;
-  }
-  
-  .socialLinks {
-    margin-bottom: 3rem;
+    border-radius: 32px;
   }
 }
