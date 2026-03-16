@@ -1,0 +1,152 @@
+{
+    "colorScheme": "light",
+    "fonts": [
+        {
+            "family": "DM Sans",
+            "role": "body"
+        },
+        {
+            "family": "Montserrat",
+            "role": "heading"
+        },
+        {
+            "family": "Abril Fatface",
+            "role": "display"
+        },
+        {
+            "family": "Alegreya",
+            "role": "unknown"
+        }
+    ],
+    "colors": {
+        "primary": "#BA4B2F",
+        "accent": "#83A5C6",
+        "background": "#FCF5EB",
+        "textPrimary": "#000000",
+        "link": "#BA4B2F"
+    },
+    "typography": {
+        "fontFamilies": {
+            "primary": "DM Sans",
+            "heading": "Montserrat"
+        },
+        "fontStacks": {
+            "heading": [
+                "Abril Fatface",
+                "sans-serif"
+            ],
+            "body": [
+                "DM Sans",
+                "sans-serif"
+            ],
+            "paragraph": [
+                "DM Sans",
+                "sans-serif"
+            ]
+        },
+        "fontSizes": {
+            "h1": "40px",
+            "h2": "30px",
+            "body": "18px"
+        }
+    },
+    "spacing": {
+        "baseUnit": 4,
+        "borderRadius": "3px"
+    },
+    "components": {
+        "input": {
+            "background": "transparent",
+            "textColor": "#BA4B2F",
+            "borderColor": null,
+            "borderRadius": "0px",
+            "borderRadiusCorners": {
+                "topLeft": "0px",
+                "topRight": "0px",
+                "bottomRight": "0px",
+                "bottomLeft": "0px"
+            },
+            "shadow": "none"
+        },
+        "buttonPrimary": {
+            "background": "#BA4B2F",
+            "textColor": "#000000",
+            "borderRadius": "0px",
+            "borderRadiusCorners": {
+                "topLeft": "0px",
+                "topRight": "0px",
+                "bottomRight": "0px",
+                "bottomLeft": "0px"
+            },
+            "shadow": "none"
+        },
+        "buttonSecondary": {
+            "background": "#83A5C6",
+            "textColor": "#FFFFFF",
+            "borderColor": "#000B39",
+            "borderRadius": "22px",
+            "borderRadiusCorners": {
+                "topLeft": "22px",
+                "topRight": "22px",
+                "bottomRight": "22px",
+                "bottomLeft": "22px"
+            },
+            "shadow": "none"
+        }
+    },
+    "images": {
+        "logo": "https://bimalingua.com/wp-content/uploads/2023/04/bombilla-300x300.png",
+        "favicon": "https://bimalingua.com/wp-content/uploads/2023/04/favicon-bimalingua-150x150.png",
+        "ogImage": "https://bimalingua.com/wp-content/uploads/2025/01/Diseno-sin-titulo-4.png"
+    },
+    "__llm_logo_reasoning": {
+        "selectedIndex": 0,
+        "reasoning": "Logo rejected: Red flags detected (UI icon). Selected #0 because it is located in the header, is visible, and matches the brand name 'Bimalingua'.",
+        "confidence": 0.9,
+        "rejected": true,
+        "source": "llm"
+    },
+    "__llm_button_reasoning": {
+        "primary": {
+            "index": 5,
+            "text": "Pide información",
+            "reasoning": "Button #5 has a vibrant brand color (#BA4B2F) and action-oriented text ('Pide información'), making it a strong candidate for the primary CTA."
+        },
+        "secondary": {
+            "index": 8,
+            "text": "Pide información",
+            "reasoning": "Button #8 has a different vibrant color (#83A5C6) and also features action-oriented text, making it suitable as a secondary CTA."
+        },
+        "confidence": 0.95
+    },
+    "personality": {
+        "tone": "professional",
+        "energy": "medium",
+        "targetAudience": "students and professionals preparing for Cambridge exams"
+    },
+    "designSystem": {
+        "framework": "custom",
+        "componentLibrary": ""
+    },
+    "confidence": {
+        "buttons": 0.95,
+        "colors": 0.9,
+        "overall": 0.925
+    },
+    "__llm_metadata": {
+        "logoSelection": {
+            "llmCalled": true,
+            "llmSucceeded": true,
+            "finalSource": "llm",
+            "rawLogoSelection": {
+                "selectedLogoIndex": 0,
+                "selectedLogoReasoning": "Selected #0 because it is located in the header, is visible, and matches the brand name 'Bimalingua'.",
+                "confidence": 0.9
+            }
+        },
+        "buttonClassification": {
+            "llmCalled": true,
+            "llmSucceeded": true
+        }
+    }
+}

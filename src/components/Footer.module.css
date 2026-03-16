@@ -1,59 +1,144 @@
 .footer {
-  padding: 80px 0 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  margin-top: 80px;
-  background: radial-gradient(circle at bottom, rgba(176, 91, 59, 0.05), transparent);
+  padding: 100px 0 40px;
+  background: white;
+  border-top: 1px solid var(--border);
+  margin-top: 100px;
 }
 
-.footerContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  text-align: center;
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 6rem;
 }
 
 .footerBrand {
+  max-width: 360px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logoText {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.brandDesc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.socialLinks a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(176, 91, 59, 0.2);
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.linkGroup h4 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.linkGroup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-.footerLogoIcon {
-  filter: drop-shadow(0 10px 15px rgba(176, 91, 59, 0.2));
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.footerLogoIcon:hover {
-  transform: translateY(-8px) scale(1.1);
-}
-
-.footerLogoText {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 3.5rem;
-  color: var(--primary);
-  letter-spacing: -1px;
-}
-
-.footer p {
-  opacity: 0.6;
+.linkGroup a {
+  color: var(--text-secondary);
   font-size: 1rem;
-  margin-top: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.linkGroup a:hover {
+  color: var(--primary);
+  padding-left: 5px;
+}
+
+.footerBottom {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footerBottom p {
+  color: var(--text-tertiary);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .footerBrand {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .logoWrapper {
+    justify-content: center;
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+  
+  .footerLinks {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
-  .footer {
-    padding: 60px 0 30px;
-    margin-top: 60px;
+  .footerLinks {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-
-  .footerLogoText {
-    font-size: 2.5rem;
-  }
-
-  .footerContent {
-    gap: 1.5rem;
+  
+  .linkGroup h4 {
+    margin-bottom: 1.5rem;
   }
 }

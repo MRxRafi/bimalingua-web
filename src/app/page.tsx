@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import styles from "./page.module.css";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   const [activePlan, setActivePlan] = useState('individual'); // State for pricing toggle
@@ -61,14 +62,14 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className={styles.heroImageWrapper}
             >
-               <Image
+              <Image
                 src="https://bimalingua.com/wp-content/uploads/2025/03/Mejora-tu-listening-7-1024x576.png"
                 alt="Angie - Academia Bimalingua"
                 width={800}
                 height={450}
                 className={styles.heroImage}
                 priority
-               />
+              />
             </motion.div>
           </div>
         </motion.section>
@@ -103,7 +104,9 @@ export default function Home() {
                     { title: "Lecciones entretenidas", desc: "Mis clases están pensadas para que nunca pierdas la motivación." },
                     { title: "Clases personalizadas", desc: "Organizaré las clases de inglés para que estén enfocadas en tus objetivos." },
                     { title: "Flexibilidad", desc: "Organízate como quieras, nos adaptamos a tu ritmo." },
-                    { title: "Resultados asegurados", desc: "Con mi método de estudio personalizado a tu nivel, aprenderás inglés por fin." }
+                    { title: "Resultados asegurados", desc: "Con mi método de estudio personalizado a tu nivel, aprenderás inglés por fin." },
+                    { title: "Material descargable", desc: "Material propio pensado y personalizada para cada una de mis alumnas." },
+                    { title: "Ejercicios personalizados", desc: "Recibirás cada semana ejercicios prácticos adaptados a tu nivel de inglés." }
                   ].map((f, i) => (
                     <motion.div
                       key={i}
@@ -135,21 +138,36 @@ export default function Home() {
               <p>Tu pasaporte al éxito académico y profesional internacional.</p>
             </motion.div>
             <div className={styles.cambridgeGrids}>
-              {['B1 Preliminary', 'B2 First', 'C1 Advanced', 'C2 Proficiency'].map((level, i) => (
-                <motion.div
-                  key={level}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`${styles.levelCard} glass`}
-                  whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
-                  <div className={styles.levelBadge}>{level.split(' ')[0]}</div>
-                  <h3>{level}</h3>
-                  <p>Prepárate con simulacros reales y técnicas específicas para cada parte del examen.</p>
-                </motion.div>
-              ))}
+              {[
+                { name: 'B1 Preliminary', desc: 'Domina lo esencial y comienza a comunicarte con total seguridad.', href: '/b1' },
+                { name: 'B2 First', desc: 'Tu pasaporte al mercado laboral y a la fluidez que exigen las empresas.', href: '/b2' },
+                { name: 'C1 Advanced', desc: 'Exprésate con naturalidad y precisión en entornos académicos o profesionales.', href: '/c1' },
+                { name: 'C2 Proficiency', desc: 'Alcanza la maestría absoluta. El nivel más alto para los que no tienen límites.', href: null }
+              ].map((level, i) => {
+                const Card = (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`${styles.levelCard} glass`}
+                    whileHover={level.href ? { y: -10, transition: { duration: 0.2 } } : {}}
+                    style={level.href ? { cursor: 'pointer' } : {}}
+                  >
+                    <div className={styles.levelBadge}>{level.name.split(' ')[0]}</div>
+                    <h3>{level.name}</h3>
+                    <p>{level.desc}</p>
+                  </motion.div>
+                );
+
+                return level.href ? (
+                  <Link href={level.href} key={level.name} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {Card}
+                  </Link>
+                ) : (
+                  <div key={level.name}>{Card}</div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -270,7 +288,7 @@ export default function Home() {
               <h2 className="heading" style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
               <p style={{ color: 'var(--text-secondary)' }}>Resuelve tus dudas generales de Bimalingua.</p>
             </motion.div>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
                 { q: "¿Se puede recuperar una clase si no asisto un día?", a: "En el caso de que un alumno no pueda asistir a una clase, ésta se dejará grabada para que pueda visualizarla y no pierda el ritmo de la clase. Si es una clase particular, si avisas con 24h de antelación se puede reprogramar." },
@@ -278,9 +296,9 @@ export default function Home() {
                 { q: "¿Cuánto tiempo tardaré en prepararme el certificado de Cambridge?", a: "Si bien el tiempo varía dependiendo de cada alumno. Las clases están pensadas para presentarse a un examen oficial tras nueve meses de clases (lo que sería un curso lectivo). Todo esto dependerá del compromiso de alumno." },
                 { q: "¿Puedo apuntarme solo medio mes o a la mitad de las clases?", a: "No, el pago mensual no puede dividirse. Es obligación del alumno comprometerse con las clases para el correcto funcionamiento de las mismas." },
                 { q: "¿Cómo se realiza el pago de las clases?", a: "Las clases se pagan por adelantado a principio de cada mes mediante transferencia bancaria y en caso de individuales se organizan en bonos de clases." },
-                { q: "¿Puedo elegir el horario de mis clases particulres?", a: "Sí, hay flexibilidad horaria en las clases 1 a 1 para que puedas organizarte según tu disponibilidad." },
+                { q: "¿Puedo elegir el horario de mis clases particulares?", a: "Sí, hay flexibilidad horaria en las clases 1 a 1 para que puedas organizarte según tu disponibilidad." },
               ].map((faq, i) => (
-                <motion.details 
+                <motion.details
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -330,32 +348,29 @@ export default function Home() {
                   }}
                   className={`${styles.decorationCircle} glass`}
                 >
-                   <Image
+                  <Image
                     src="/assets/home-head.webp"
                     alt="Bimalingua Tiles"
                     width={300}
                     height={300}
                     className={styles.tilesDecoration}
                     style={{ borderRadius: '50%', objectFit: 'cover', opacity: 0.6 }}
-                   />
+                  />
                 </motion.div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="test" className={styles.testSection}>
+        <section id="contacto" className={styles.contactSection}>
           <div className="container">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className={`${styles.testCard} glass`}
-            >
-              <h2>¿Tu nivel de inglés te está frenando?</h2>
+            <div className={styles.sectionHeader}>
+              <h2 className="accent">¿Tu nivel de inglés te está frenando?</h2>
               <p>Haz tu test de nivel GRATIS y descubre cómo puedes mejorar hoy mismo.</p>
-              <Link href="/test" className="btn btn-primary">Empezar el test ahora</Link>
-            </motion.div>
+              <Link href="/test" className="btn btn-secondary">Ir al Test de Nivel</Link>
+            </div>
+            
+            <ContactForm />
           </div>
         </section>
       </main>

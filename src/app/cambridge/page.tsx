@@ -1,4 +1,6 @@
-import * as motion from "framer-motion/client";
+"use client";
+
+import { motion } from "framer-motion";
 import styles from "../page.module.css";
 import cambridgeStyles from "./cambridge.module.css";
 import Link from 'next/link';
