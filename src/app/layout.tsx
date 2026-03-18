@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -14,9 +14,64 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#B05B3B",
+};
+
 export const metadata: Metadata = {
-  title: "Bimalingua | Clases de inglés online",
-  description: "Prepara tus exámenes de Cambridge con Angie. Clases personalizadas y método dinámico.",
+  metadataBase: new URL("https://bimalingua.com"),
+  title: {
+    default: "Bimalingua | Clases de inglés online",
+    template: "%s | Bimalingua",
+  },
+  description: "Prepara tus exámenes de Cambridge con Angie. Clases personalizadas, grupos reducidos y método dinámico para aprobar a la primera.",
+  keywords: ["clases de inglés online", "preparación cambridge", "B2 First", "C1 Advanced", "B1 Preliminary", "aprender inglés", "academia inglés online"],
+  authors: [{ name: "Angie", url: "https://bimalingua.com/sobre-mi" }],
+  creator: "Angie",
+  publisher: "Bimalingua",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Bimalingua | Clases de inglés online",
+    description: "Prepara tus exámenes de Cambridge con Angie. Clases personalizadas y método dinámico.",
+    url: "https://bimalingua.com",
+    siteName: "Bimalingua",
+    images: [
+      {
+        url: "/assets/angie.png",
+        width: 1200,
+        height: 630,
+        alt: "Bimalingua - Clases de inglés online",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bimalingua | Clases de inglés online",
+    description: "Prepara tus exámenes de Cambridge con Angie. Clases personalizadas y método dinámico.",
+    images: ["/assets/angie.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
