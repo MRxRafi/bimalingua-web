@@ -1,23 +1,23 @@
 "use client";
 
-import styles from "../sobre-mi/sobre-mi.module.css";
+import styles from "../legal.module.css";
 import { motion } from "framer-motion";
 
 export default function PoliticaPrivacidad() {
   return (
-    <div className={styles.pageWrapper}>
+    <div className={styles.legalWrapper}>
       <main className="container">
-        <section className={styles.contentSection}>
+        <section>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="heading" style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '3rem', textAlign: 'center' }}>
+            <h1 className={styles.legalTitle}>
               Política de Privacidad
             </h1>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+            <div className={styles.legalContent}>
               <p>
                 En Bimalingua, el respeto a tu privacidad es una prioridad. Esta Política de Privacidad describe cómo 
                 recopilamos, usamos y protegemos la información personal que nos proporcionas a través de nuestro 

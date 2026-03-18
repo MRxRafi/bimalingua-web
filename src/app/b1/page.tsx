@@ -46,7 +46,7 @@ export default function B1Preliminary() {
           </div>
 
           <div className={styles.ctaWrapper}>
-            <Link href="#contacto" className={`${styles.ctaButton} btn btn-primary`}>
+            <Link href="/#contacto" className={`${styles.ctaButton} btn btn-primary`}>
               ¡Quiero matricularme!
             </Link>
           </div>

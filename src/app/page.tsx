@@ -364,12 +364,6 @@ export default function Home() {
 
         <section id="contacto" className={styles.contactSection}>
           <div className="container">
-            <div className={styles.sectionHeader}>
-              <h2 className="accent">¿Tu nivel de inglés te está frenando?</h2>
-              <p>Haz tu test de nivel GRATIS y descubre cómo puedes mejorar hoy mismo.</p>
-              <Link href="/test" className="btn btn-secondary">Ir al Test de Nivel</Link>
-            </div>
-            
             <ContactForm />
           </div>
         </section>

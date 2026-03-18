@@ -60,6 +60,17 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.inputGroup}>
+          <label htmlFor="phone">Teléfono de contacto</label>
+          <input 
+            id="phone"
+            name="phone"
+            required
+            placeholder="Tu número de teléfono"
+            type="tel" 
+          />
+        </div>
+
+        <div className={styles.inputGroup}>
           <label htmlFor="message">Tu mensaje</label>
           <textarea 
             id="message"

@@ -26,7 +26,7 @@ export default function SobreMi() {
             />
             <div className={styles.imageInfo}>
               <h1>Angie</h1>
-              <p style={{ opacity: 0.9, fontWeight: 500 }}>Founder de Bimalingua</p>
+              <p className={styles.imageSubtitle}>Founder de Bimalingua</p>
             </div>
           </motion.div>
 
@@ -58,11 +58,11 @@ export default function SobreMi() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="heading" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--primary)', marginBottom: '2.5rem', textAlign: 'center' }}>
-              ¡Hola! Soy Angie... <br /><span style={{ color: 'var(--text-secondary)', fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>y me encantan los idiomas.</span>
+            <h2 className={`heading ${styles.introTitle}`}>
+              ¡Hola! Soy Angie... <br /><span className={styles.introSubtitle}>y me encantan los idiomas.</span>
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+            <div className={styles.textContent}>
               <p>
                 Mi aventura con las lenguas empezó con 14 años cuando me regalaron una guitarra y para aprender a tocar me aprendí las canciones de los Beatles. A partir de ahí, me empezó a llamar la atención todo lo relacionado con el inglés y con Reino Unido.
               </p>
@@ -71,26 +71,26 @@ export default function SobreMi() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: '5rem 0' }} />
+            <hr className={styles.separator} />
 
-            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '2.5rem', textAlign: 'center' }}>
+            <h2 className={styles.sectionTitle}>
               ¿Cómo he llegado hasta aquí?
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+            <div className={styles.textContent}>
               <p>
                 Mientras estudiaba estuve dando clases de inglés a niños y al acabar mi grado me di cuenta de que lo que realmente me gustaba era enseñar. ¡Por eso, creé Academia Bimalingua! Para seguir ayudando a personas como tú. Estudiantes que están deseando abrir la mente a otras culturas, viajar y hablar con nativos de todo el mundo.
               </p>
               <p>
-                Conocí a muchas personas completamente desmotivadas con el inglés. Estudiantes que decían que el inglés no era lo suyo. Asi que creé un sistema de estudio para que pudieran aprender inglés <em style={{ color: 'var(--primary)' }}>in a blink of an eye</em>.
+                Conocí a muchas personas completamente desmotivadas con el inglés. Estudiantes que decían que el inglés no era lo suyo. Asi que creé un sistema de estudio para que pudieran aprender inglés <em className="accent">in a blink of an eye</em>.
               </p>
               <p>
                 Adapté el método que a mí me ayudó a aprender cuatro idiomas ¡y te aseguro que funciona! Consiste en adaptar tu manera de aprender a mis clases.
               </p>
             </div>
 
-            <div style={{ marginTop: '6rem', padding: 'clamp(1.5rem, 4vw, 4rem)', borderRadius: '48px', background: 'var(--surface)', border: '1px solid var(--border)', boxShadow: '0 20px 40px rgba(0,0,0,0.02)' }}>
-              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '4rem', textAlign: 'center' }}>
-                Mis Valores <span style={{ color: 'var(--primary)' }}>.</span>
+            <div className={styles.valuesContainer}>
+              <h2 className={styles.valuesTitle}>
+                Mis Valores <span>.</span>
               </h2>
               <div className={styles.valuesGrid}>
                 {[
@@ -102,10 +102,10 @@ export default function SobreMi() {
                   { title: "Ambiente positivo", desc: "Aprender un idioma puede ser un reto, pero conmigo encontrarás un espacio donde te sentirás apoyado. ¡Aquí no hay lugar para el estrés!" }
                 ].map((val, i) => (
                   <div key={i} className={styles.valueCard}>
-                    <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <span style={{ color: 'var(--primary)', fontSize: '1.5rem' }}>✦</span> {val.title}
+                    <h3>
+                      <span>✦</span> {val.title}
                     </h3>
-                    <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '1.05rem' }}>{val.desc}</p>
+                    <p>{val.desc}</p>
                   </div>
                 ))}
               </div>

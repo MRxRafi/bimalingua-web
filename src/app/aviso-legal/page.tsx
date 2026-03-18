@@ -1,23 +1,23 @@
 "use client";
 
-import styles from "../sobre-mi/sobre-mi.module.css";
+import styles from "../legal.module.css";
 import { motion } from "framer-motion";
 
 export default function AvisoLegal() {
   return (
-    <div className={styles.pageWrapper}>
+    <div className={styles.legalWrapper}>
       <main className="container">
-        <section className={styles.contentSection}>
+        <section>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="heading" style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '3rem', textAlign: 'center' }}>
+            <h1 className={styles.legalTitle}>
               Aviso Legal
             </h1>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+            <div className={styles.legalContent}>
               <h2>1. Datos identificativos</h2>
               <p>
                 En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, 
