@@ -41,7 +41,7 @@ export default function HomeClient() {
               variants={staggerContainer}
             >
               <motion.h1 className="heading" variants={fadeInUp}>
-                Clases de inglés online para <span className={styles.highlight}>preparar el examen de Cambridge</span>.
+                Clases de inglés online para <span className={styles.highlight}>preparar el examen de Cambridge</span>
               </motion.h1>
               <motion.h2 variants={fadeInUp}>Certifica tu nivel de inglés para conseguir más oportunidades.</motion.h2>
               <motion.div className={styles.ctaGroup} variants={fadeInUp}>
