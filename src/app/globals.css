@@ -19,9 +19,9 @@
   --shadow-hover: 0 20px 40px rgba(176, 91, 59, 0.15);
   
   /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(176, 91, 59, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.04);
   
   /* Fluid Spacing & Typography */
   --space-unit: clamp(0.75rem, 1vw, 1rem);
@@ -116,8 +116,8 @@ a {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(176, 91, 59, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(176, 91, 59, 0.25);
 }
 
 .btn-secondary {

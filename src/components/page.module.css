@@ -401,9 +401,9 @@
 }
 
 .priceCardModern:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(176, 91, 59, 0.15);
-  border-color: rgba(176, 91, 59, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+  border-color: rgba(176, 91, 59, 0.15);
 }
 
 .featuredPriceCard {
@@ -765,7 +765,7 @@
   background: var(--primary);
   top: -100px;
   right: -100px;
-  opacity: 0.12;
+  opacity: 0.04;
 }
 
 .blob2 {
@@ -774,7 +774,7 @@
   background: var(--accent);
   bottom: -100px;
   left: -150px;
-  opacity: 0.1;
+  opacity: 0.03;
 }
 
 .imageGlassEffect {

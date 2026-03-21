@@ -32,7 +32,7 @@ export default function HomeClient() {
         <section className={styles.hero}>
           <div className={`${styles.blob} ${styles.blob1}`} />
           <div className={`${styles.blob} ${styles.blob2}`} />
-          
+
           <div className={`${styles.heroContent} container`}>
             <motion.div
               className={styles.heroText}
@@ -71,7 +71,7 @@ export default function HomeClient() {
 
         <section className={styles.heroDetails}>
           <div className="container">
-            <motion.div 
+            <motion.div
               className={styles.heroIntro}
               initial="hidden"
               whileInView="visible"
@@ -93,7 +93,7 @@ export default function HomeClient() {
                 </p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className={styles.seoHighlightBox}
                 variants={fadeInUp}
                 whileHover={{ scale: 1.02, rotate: 1 }}
@@ -201,7 +201,7 @@ export default function HomeClient() {
               <h4 className={styles.stepsLabel}>1. Elige tu nivel &bull; 2. Elige tu horario &bull; 3. Consigue tus objetivos</h4>
             </motion.div>
 
-            
+
             <div className={cambridgeStyles.cardsGrid}>
               {[
                 {
@@ -303,6 +303,9 @@ export default function HomeClient() {
                   <p>
                     Lo que marca la diferencia en mis clases particulares es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos fuertes y ver qué áreas necesitan más atención.
                   </p>
+                  <p>
+                    Para que aprender no sea aburrido, combino recursos como <u>vídeos, música, artículos y juegos que hacen las clases dinámicas y entretenidas.</u> Además, después de las clases de inglés online, tendrás tareas y actividades para practicar de manera autónoma, ayudándote a consolidar lo aprendido y mantenerte motivada.
+                  </p>
                 </div>
 
                 <div className={styles.particularesList}>
@@ -312,7 +315,7 @@ export default function HomeClient() {
                     <li>Práctica real para ganar seguridad al hablar</li>
                     <li>Clases diseñadas para que sientas que avanzas de verdad</li>
                     <li>Mejora de la pronunciación con ejercicios prácticos</li>
-                    <li>Mejora de la comprensión lectora y auditiva</li>
+                    <li>Mejora de la comprensión lectora y auditiva para diferentes acentos en inglés</li>
                   </ul>
                 </div>
               </div>
