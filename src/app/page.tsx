@@ -38,7 +38,7 @@ export default function Home() {
             <div className={`${styles.heroContent} container`}>
               <FadeIn className={styles.heroText}>
                 <h1 className="heading">
-                  Clases de inglés online para <span className={styles.highlight}>preparar el examen de Cambridge</span>.
+                  Clases de inglés online para <span className={styles.highlight}>preparar el examen de Cambridge</span>
                 </h1>
                 <h2>Certifica tu nivel de inglés para conseguir más oportunidades.</h2>
                 <div className={styles.ctaGroup}>
@@ -182,7 +182,7 @@ export default function Home() {
                   </FadeIn>
                 ))}
               </div>
-              
+
               <div style={{ textAlign: 'center', marginTop: '4rem' }}>
                 <Link href="/cambridge" className="btn btn-secondary">No lo tengo claro</Link>
               </div>
