@@ -54,8 +54,8 @@ export default function PricingSection() {
                 <div className={styles.popularBadge}>Mejor valor</div>
                 <div className={styles.priceCardHeader}>
                   <h3>Bono 10 clases</h3>
-                  <p className={styles.price}><span>200 €</span></p>
-                  <p className={styles.subtitle}>Precio único (20€ / Clase)</p>
+                  <p className={styles.price}><span>20€</span> / Clase</p>
+                  <p className={styles.subtitle}>Pago único de 200 €</p>
                 </div>
                 <div className={styles.priceCardFooter}>
                   <Link href="#contacto" className={`${styles.btnFull} ${styles.darkBtn} btn btn-primary`}>Pide información</Link>
@@ -64,8 +64,8 @@ export default function PricingSection() {
               <motion.div className={styles.priceCardModern} whileHover={{ y: -5 }}>
                 <div className={styles.priceCardHeader}>
                   <h3>Bono 5 clases</h3>
-                  <p className={styles.price}><span>115 €</span></p>
-                  <p className={styles.subtitle}>Precio único (23€ / Clase)</p>
+                  <p className={styles.price}><span>23€</span> / Clase</p>
+                  <p className={styles.subtitle}>Pago único de 115 €</p>
                 </div>
                 <div className={styles.priceCardFooter}>
                   <Link href="#contacto" className={`${styles.btnFull} btn btn-primary`}>Pide información</Link>

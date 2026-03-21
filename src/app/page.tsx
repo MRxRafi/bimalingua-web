@@ -220,21 +220,30 @@ export default function Home() {
               <FadeIn>
                 <div className={styles.particularesContent}>
                   <div className={styles.particularesText}>
-                    <p>
+                    <p className={styles.leadText}>
                       Conseguir un <Link href="/cambridge"><strong>certificado de Cambridge</strong></Link> puede abrirte las puertas a nuevas oportunidades para conseguir mejores oportunidades laborales, trabajar o vivir en el extranjero.
                     </p>
-                    <p>
+                    <p className={styles.standardText}>
                       Aquí no hay clases genéricas ni métodos aburridos. Se trata de que consigas resultados reales, aprendiendo de forma personalizada, a tu ritmo y con un enfoque directo en lo que necesitas para <strong>aprender inglés</strong> y aprobar tu <strong>examen de Cambridge</strong>.
                     </p>
-                    <p>
-                      ¿Te cuesta la gramática? ¿Te bloqueas al hablar? No pasa nada. Adaptaré las clases de inglés online a tus puntos débiles y a lo que más te cueste, para que avances sin frustraciones. Además, trabajaremos juntas para que el inglés deje de ser un obstáculo y se convierta en una herramienta que te abra puertas.
-                    </p>
-                    <p>
-                      Lo que marca la diferencia en mis clases particulares es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos fuertes y ver qué áreas necesitan más atención.
-                    </p>
-                    <p>
-                      Para que aprender no sea aburrido, combino recursos como <u>vídeos, música, artículos y juegos que hacen las clases dinámicas y entretenidas.</u> Además, después de las clases de inglés online, tendrás tareas y actividades para practicar de manera autónoma, ayudándote a consolidar lo aprendido y mantenerte motivada.
-                    </p>
+                    <div className={styles.highlightCard}>
+                      <span className={styles.quoteIcon}>&ldquo;</span>
+                      <p>
+                        ¿Te cuesta la gramática? ¿Te bloqueas al hablar? No pasa nada. Adaptaré las clases de inglés online a tus puntos débiles y a lo que más te cueste, para que avances sin frustraciones. Además, trabajaremos juntas para que el inglés deje de ser un obstáculo y se convierta en una herramienta que te abra puertas.
+                      </p>
+                    </div>
+                    <div className={styles.textGrid}>
+                      <div className={styles.textBlock}>
+                        <p>
+                          Lo que marca la diferencia en mis clases particulares es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos fuertes y ver qué áreas necesitan más atención.
+                        </p>
+                      </div>
+                      <div className={styles.textBlock}>
+                        <p>
+                          Para que aprender no sea aburrido, combino recursos como <u>vídeos, música, artículos y juegos que hacen las clases dinámicas y entretenidas.</u> Además, después de las clases de inglés online, tendrás tareas y actividades para practicar de manera autónoma, ayudándote a consolidar lo aprendido y mantenerte motivada.
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   <div className={styles.particularesList}>
