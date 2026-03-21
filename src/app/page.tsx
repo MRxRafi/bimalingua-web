@@ -283,32 +283,7 @@ export default function Home() {
 
           <PricingSection />
 
-          <section id="sobre-mi" className={styles.about}>
-            <div className="container">
-              <div className={styles.aboutContent}>
-                <FadeIn direction="left" className={styles.aboutText}>
-                  <h2 className="accent">¡Hola! Soy Angie</h2>
-                  <p>Ayudo a estudiantes ambiciosos a conseguir su certificado oficial de inglés para que ninguna oportunidad se les escape.</p>
-                  <p>En mi academia, no solo aprenderás gramática; aprenderás a comunicarte con confianza y a usar el inglés como una herramienta real para tu futuro.</p>
-                  <div style={{ marginTop: '3rem' }}>
-                    <Link href="/sobre-mi" className="btn btn-primary">Conóceme mejor</Link>
-                  </div>
-                </FadeIn>
-                <div className={styles.aboutDecoration}>
-                  <div className={`${styles.decorationCircle} glass`}>
-                    <Image
-                      src="/assets/home-head.webp"
-                      alt="Bimalingua Angie"
-                      width={350}
-                      height={350}
-                      className={styles.tilesDecoration}
-                      style={{ borderRadius: '50%', objectFit: 'cover', opacity: 0.8 }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+
 
           <section id="contacto" className={styles.contactSection}>
             <div className="container">
