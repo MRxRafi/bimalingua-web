@@ -50,7 +50,7 @@ export default function Home() {
               <FadeIn direction="right" delay={0.4} className={styles.heroImageWrapper}>
                 <div className={styles.imageGlassEffect} />
                 <Image
-                  src="https://bimalingua.com/wp-content/uploads/2025/03/Mejora-tu-listening-7-1024x576.png"
+                  src="/assets/angie-hero.webp"
                   alt="Clases de inglés online en Academia Bimalingua"
                   width={900}
                   height={506}
@@ -235,7 +235,7 @@ export default function Home() {
                     <div className={styles.textGrid}>
                       <div className={styles.textBlock}>
                         <p>
-                          Lo que marca la diferencia en mis clases particulares es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos fuertes y ver qué áreas necesitan más atención.
+                          Lo que marca la diferencia en mis clases particulares es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos débiles y ver qué áreas necesitan más atención.
                         </p>
                       </div>
                       <div className={styles.textBlock}>
