@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/lib/blog-data";
+import { formatSpanishDateToISO } from "@/lib/date-utils";
 import BlogPostClient from "@/components/BlogPostClient";
 
 interface Props {
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
       locale: "es_ES",
       type: "article",
-      publishedTime: post.date, // Note: post.date is a string like "10 Abril 2024", ideally should be ISO
+      publishedTime: formatSpanishDateToISO(post.date),
       authors: ["Angie"],
       section: post.category,
     },
@@ -74,7 +75,7 @@ export default async function BlogPost({ params }: Props) {
     "headline": post.title,
     "description": post.excerpt,
     "image": post.image.startsWith('http') ? post.image : `https://bimalingua.com${post.image}`,
-    "datePublished": "2024-01-01", // Placeholder, since we only have "10 Abril 2024"
+    "datePublished": formatSpanishDateToISO(post.date),
     "author": {
       "@type": "Person",
       "name": "Angie",
