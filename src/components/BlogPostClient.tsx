@@ -5,12 +5,19 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BlogPost } from "@/lib/blog-data";
 
-export default function BlogPostClient({ post }: { post: BlogPost }) {
-  const toHtml = (text: string) => text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/_(.*?)_/g, '<em>$1</em>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">$1</a>');
+const BOLD_REGEX = /\*\*(.*?)\*\*/g;
+const ITALIC_REGEX = /_(.*?)_/g;
+const LINK_REGEX = /\[([^\]]+)\]\(([^)]+)\)/g;
+const NUMBERED_LIST_REGEX = /^\d+\./;
+const NUMBERED_LIST_ITEM_REGEX = /^\d+\.\s*/;
+const BULLET_LIST_ITEM_REGEX = /^-\s*/;
 
+const toHtml = (text: string) => text
+  .replace(BOLD_REGEX, '<strong>$1</strong>')
+  .replace(ITALIC_REGEX, '<em>$1</em>')
+  .replace(LINK_REGEX, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">$1</a>');
+
+export default function BlogPostClient({ post }: { post: BlogPost }) {
   return (
     <div style={{ padding: '120px 0 80px', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
       <main className="container" style={{ maxWidth: '800px' }}>
@@ -51,24 +58,28 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
             {post.content.split('\n\n').map((paragraph, index) => {
               // H3 headings
               if (paragraph.startsWith('### ')) {
-                return <h3 key={index} style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginTop: '2rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>{paragraph.replace('### ', '')}</h3>;
+                return <h3 key={index} style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginTop: '2rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>{paragraph.slice(4)}</h3>;
               }
+
+              const lines = paragraph.split('\n');
+              const firstLine = lines[0].trim();
+
               // Numbered lists
-              if (/^\d+\./.test(paragraph.trim().split('\n')[0])) {
+              if (NUMBERED_LIST_REGEX.test(firstLine)) {
                 return (
                   <ol key={index} style={{ paddingLeft: '1.5rem' }}>
-                    {paragraph.split('\n').filter(l => l.trim()).map((item, i) => (
-                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(/^\d+\.\s*/, '')) }} />
+                    {lines.filter(l => l.trim()).map((item, i) => (
+                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(NUMBERED_LIST_ITEM_REGEX, '')) }} />
                     ))}
                   </ol>
                 );
               }
               // Bullet lists (lines starting with "- ")
-              if (paragraph.split('\n').some(l => l.trim().startsWith('- '))) {
+              if (lines.some(l => l.trim().startsWith('- '))) {
                 return (
                   <ul key={index} style={{ paddingLeft: '1.5rem' }}>
-                    {paragraph.split('\n').filter(l => l.trim()).map((item, i) => (
-                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(/^-\s*/, '')) }} />
+                    {lines.filter(l => l.trim()).map((item, i) => (
+                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(BULLET_LIST_ITEM_REGEX, '')) }} />
                     ))}
                   </ul>
                 );
