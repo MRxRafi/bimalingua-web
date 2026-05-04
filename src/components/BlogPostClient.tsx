@@ -68,9 +68,15 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               if (NUMBERED_LIST_REGEX.test(firstLine)) {
                 return (
                   <ol key={index} style={{ paddingLeft: '1.5rem' }}>
-                    {lines.filter(l => l.trim()).map((item, i) => (
-                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(NUMBERED_LIST_ITEM_REGEX, '')) }} />
-                    ))}
+                    {lines.reduce((acc, item, i) => {
+                      const trimmed = item.trim();
+                      if (trimmed) {
+                        acc.push(
+                          <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(trimmed.replace(NUMBERED_LIST_ITEM_REGEX, '')) }} />
+                        );
+                      }
+                      return acc;
+                    }, [] as React.ReactNode[])}
                   </ol>
                 );
               }
@@ -78,9 +84,15 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               if (lines.some(l => l.trim().startsWith('- '))) {
                 return (
                   <ul key={index} style={{ paddingLeft: '1.5rem' }}>
-                    {lines.filter(l => l.trim()).map((item, i) => (
-                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(BULLET_LIST_ITEM_REGEX, '')) }} />
-                    ))}
+                    {lines.reduce((acc, item, i) => {
+                      const trimmed = item.trim();
+                      if (trimmed) {
+                        acc.push(
+                          <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(trimmed.replace(BULLET_LIST_ITEM_REGEX, '')) }} />
+                        );
+                      }
+                      return acc;
+                    }, [] as React.ReactNode[])}
                   </ul>
                 );
               }
