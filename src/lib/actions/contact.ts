@@ -1,6 +1,7 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import { logger } from "@/lib/logger";
 
 export async function sendEmail(formData: FormData) {
   const name = formData.get("name");
@@ -49,7 +50,7 @@ export async function sendEmail(formData: FormData) {
 
     return { success: "Mensaje enviado correctamente. Te responderé lo antes posible." };
   } catch (error) {
-    console.error("Error enviando email:", error);
+    logger.error("Error enviando email:", error);
     return { error: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde." };
   }
 }
