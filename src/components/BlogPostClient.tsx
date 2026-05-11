@@ -4,18 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { BlogPost } from "@/lib/blog-data";
+import { parseFormattedText } from "@/lib/blog-utils";
 
-const BOLD_REGEX = /\*\*(.*?)\*\*/g;
-const ITALIC_REGEX = /_(.*?)_/g;
-const LINK_REGEX = /\[([^\]]+)\]\(([^)]+)\)/g;
 const NUMBERED_LIST_REGEX = /^\d+\./;
 const NUMBERED_LIST_ITEM_REGEX = /^\d+\.\s*/;
 const BULLET_LIST_ITEM_REGEX = /^-\s*/;
-
-const toHtml = (text: string) => text
-  .replace(BOLD_REGEX, '<strong>$1</strong>')
-  .replace(ITALIC_REGEX, '<em>$1</em>')
-  .replace(LINK_REGEX, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">$1</a>');
 
 export default function BlogPostClient({ post }: { post: BlogPost }) {
   return (
@@ -69,7 +62,9 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                 return (
                   <ol key={index} style={{ paddingLeft: '1.5rem' }}>
                     {lines.filter(l => l.trim()).map((item, i) => (
-                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(NUMBERED_LIST_ITEM_REGEX, '')) }} />
+                      <li key={i} style={{ marginBottom: '0.5rem' }}>
+                        {parseFormattedText(item.replace(NUMBERED_LIST_ITEM_REGEX, ''))}
+                      </li>
                     ))}
                   </ol>
                 );
@@ -79,13 +74,15 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                 return (
                   <ul key={index} style={{ paddingLeft: '1.5rem' }}>
                     {lines.filter(l => l.trim()).map((item, i) => (
-                      <li key={i} style={{ marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: toHtml(item.replace(BULLET_LIST_ITEM_REGEX, '')) }} />
+                      <li key={i} style={{ marginBottom: '0.5rem' }}>
+                        {parseFormattedText(item.replace(BULLET_LIST_ITEM_REGEX, ''))}
+                      </li>
                     ))}
                   </ul>
                 );
               }
-              // Regular paragraph with inline bold support
-              return <p key={index} dangerouslySetInnerHTML={{ __html: toHtml(paragraph) }} />;
+              // Regular paragraph with inline formatting support
+              return <p key={index}>{parseFormattedText(paragraph)}</p>;
             })}
           </div>
 
