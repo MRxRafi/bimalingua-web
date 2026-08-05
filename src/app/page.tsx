@@ -153,7 +153,7 @@ export default function Home() {
                     {[
                       { title: "Lecciones entretenidas", desc: "Mis clases están pensadas para que nunca pierdas la motivación y la ilusión de aprender inglés." },
                       { title: "Clases personalizadas", desc: "Después de la primera entrevista organizaré las clases de inglés para que estén enfocadas en tus objetivos." },
-                      { title: "Flexibilidad", desc: "Organízate como quieras en clases grupales o particulares en el horario que prefieras y a tu ritmo." },
+                      { title: "Flexibilidad", desc: "Organízate como quieras en clases grupales o one to one en el horario que prefieras y a tu ritmo." },
                       { title: "Material descargable", desc: "Material propio pensado y personalizada para cada una de mis alumnas." },
                       { title: "Ejercicios personalizados", desc: "Recibirás cada semana ejercicios prácticos adaptados a tu nivel de inglés." },
                       { title: "Resultados asegurados", desc: "Con el método de estudio personalizado a tu nivel conseguirás el certificado de Cambridge que necesitas y aprenderás inglés ¡por fin!" }
@@ -199,33 +199,32 @@ export default function Home() {
                   {
                     tag: 'B1', name: 'Preliminary (PET)',
                     desc: 'Nivel intermedio. Evalúa si puedes comunicarte en situaciones cotidianas y trabajar o estudiar en un entorno de habla inglesa básico.',
-                    href: '/b1', cta: 'Ver programa B1 →', featured: false, popular: false,
+                    href: '/b1',
                   },
                   {
                     tag: 'B2', name: 'First (FCE)',
                     desc: 'Nivel intermedio-alto. El certificado más demandado por empresas y universidades de todo el mundo. Demuestra que puedes desenvolverte con fluidez.',
-                    href: '/b2', cta: 'Descubrir el curso →', featured: true, popular: true,
+                    href: '/b2',
                   },
                   {
                     tag: 'C1', name: 'Advanced (CAE)',
                     desc: 'Nivel avanzado. Demuestra un dominio excepcional del inglés, ideal para entornos profesionales y universitarios exigentes.',
-                    href: '/c1', cta: 'Ver detalles del nivel →', featured: false, popular: false,
+                    href: '/c1',
                   },
                 ].map((level, i) => (
                   <FadeIn
                     key={level.tag}
                     delay={i * 0.12}
-                    className={`${cambridgeStyles.levelCard} ${level.featured ? cambridgeStyles.featuredCard : ''}`}
+                    className={cambridgeStyles.levelCard}
                   >
-                    {level.popular && <div className={cambridgeStyles.popularTag}>Más Popular</div>}
                     <div className={cambridgeStyles.badge}>{level.tag}</div>
                     <h3 className={cambridgeStyles.cardTitle}>{level.name}</h3>
                     <p className={cambridgeStyles.cardDesc}>{level.desc}</p>
                     <Link
                       href={level.href}
-                      className={`${cambridgeStyles.btnFull} btn ${level.featured ? `btn-primary ${cambridgeStyles.whiteBtn}` : 'btn-secondary'}`}
+                      className={`${cambridgeStyles.btnFull} btn btn-secondary`}
                     >
-                      {level.cta}
+                      Ver detalles del nivel
                     </Link>
                   </FadeIn>
                 ))}
@@ -261,7 +260,7 @@ export default function Home() {
           <section id="clases-particulares" className={styles.about}>
             <div className="container">
               <FadeIn className={styles.sectionHeader}>
-                <h2 className="heading">Clases particulares</h2>
+                <h2 className="heading">Clases one to one</h2>
                 <h3 className="accent">Una forma de aprender inglés que se adapta a ti</h3>
               </FadeIn>
 
@@ -283,7 +282,7 @@ export default function Home() {
                     <div className={styles.textGrid}>
                       <div className={styles.textBlock}>
                         <p>
-                          Lo que marca la diferencia en mis clases particulares es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos débiles y ver qué áreas necesitan más atención.
+                          Lo que marca la diferencia en mis clases one to one es el enfoque totalmente <strong>personalizado</strong>. Aquí no hay un plan genérico que se aplica a todo el mundo. Cada clase está diseñada para ti, adaptando el ritmo y la intensidad según tus necesidades y objetivos. Primero, empezamos con una <strong>evaluación inicial</strong> para conocer tu <strong>nivel de inglés</strong>, identificar tus puntos débiles y ver qué áreas necesitan más atención.
                         </p>
                       </div>
                       <div className={styles.textBlock}>
@@ -309,11 +308,11 @@ export default function Home() {
 
               <FadeIn className={styles.faqSectionCard}>
                 <div className={styles.faqList}>
-                  <h3 className="accent" style={{ marginBottom: '2rem', textAlign: 'center' }}><strong>FAQ</strong> Clases particulares</h3>
+                  <h3 className="accent" style={{ marginBottom: '2rem', textAlign: 'center' }}><strong>FAQ</strong> clases one to one</h3>
                   {[
-                    { q: "¿Cómo funcionan las clases particulares?", a: "Las clases particulares son 100% personalizadas y se adaptan a tu nivel, objetivos y ritmo de aprendizaje." },
-                    { q: "¿Puedo preparar un examen Cambridge con clases particulares?", a: "Sí, las clases están diseñadas para ayudarte a aprobar el PET (B1), First (B2) o CAE (C1)." },
-                    { q: "¿Qué diferencia hay entre clases particulares y grupales?", a: "Las clases particulares son 100% personalizadas, por lo que avanzas a tu propio ritmo." },
+                    { q: "¿Cómo funcionan las clases one to one?", a: "Las clases one to one son 100% personalizadas y se adaptan a tu nivel, objetivos y ritmo de aprendizaje." },
+                    { q: "¿Puedo preparar un examen Cambridge con clases one to one?", a: "Sí, las clases están diseñadas para ayudarte a aprobar el PET (B1), First (B2) o CAE (C1)." },
+                    { q: "¿Qué diferencia hay entre clases one to one y grupales?", a: "Las clases one to one son 100% personalizadas, por lo que avanzas a tu propio ritmo." },
                     { q: "¿Cuánto tiempo necesito para ver resultados?", a: "Muchas alumnas notan mejoras en pocas semanas y alcanzan su objetivo en tres a nueve meses." },
                   ].map((faq, i) => (
                     <details key={i} className={styles.faqItemDetails}>

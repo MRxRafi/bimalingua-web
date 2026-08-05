@@ -16,7 +16,7 @@ export default function C1Advanced() {
     description: "Clases grupales de nivel avanzado enfocadas en obtener la certificación Cambridge CAE. Las clases grupales son con grupos reducidos de máximo 6 alumnos.",
     info: [
       { label: 'Horario', value: 'Mañana o Tarde' },
-      { label: 'Precio', value: '75 € / mes' },
+      { label: 'Precio', value: '90 € / mes' },
       { label: 'Horas', value: '2 horas semanales' },
       { label: 'Lugar', value: 'Online (Google Meet)' }
     ],

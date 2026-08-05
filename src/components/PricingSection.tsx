@@ -21,7 +21,7 @@ export default function PricingSection() {
             className={`${styles.toggleButton} ${activePlan === "individual" ? styles.active : ""}`}
             onClick={() => setActivePlan("individual")}
           >
-            Clases Particulares
+            Clases One to one
           </button>
           <button
             className={`${styles.toggleButton} ${activePlan === "group" ? styles.active : ""}`}
@@ -43,30 +43,46 @@ export default function PricingSection() {
             >
               <motion.div className={styles.priceCardModern} whileHover={{ y: -5 }}>
                 <div className={styles.priceCardHeader}>
-                  <h3>Clase particular</h3>
-                  <p className={styles.price}><span>25€</span> / Clase</p>
+                  <h3>Clase one to one</h3>
+                  <p className={styles.price}><span>40€</span> / clase</p>
                 </div>
                 <div className={styles.priceCardFooter}>
                   <Link href="#contacto" className={`${styles.btnFull} btn btn-primary`}>Pide información</Link>
                 </div>
               </motion.div>
+
               <motion.div className={`${styles.priceCardModern} ${styles.featuredPriceCard}`} whileHover={{ y: -5 }}>
-                <div className={styles.popularBadge}>Mejor valor</div>
+                <div className={styles.popularBadge}>Recomendado</div>
                 <div className={styles.priceCardHeader}>
-                  <h3>Bono 10 clases</h3>
-                  <p className={styles.price}><span>20€</span> / Clase</p>
-                  <p className={styles.subtitle}>Pago único de 200 €</p>
+                  <h3>Una clase semanal</h3>
+                  <p className={styles.price}><span>150€</span> / mes</p>
                 </div>
+                <ul className={styles.pricingFeatures}>
+                  <li>Una clase semanal</li>
+                  <li>Plan de estudios</li>
+                  <li>Material incluido</li>
+                  <li>Tareas para el trabajo autónomo</li>
+                  <li>Corrección de Writings</li>
+                  <li>Simulacros de Speaking</li>
+                </ul>
                 <div className={styles.priceCardFooter}>
                   <Link href="#contacto" className={`${styles.btnFull} ${styles.darkBtn} btn btn-primary`}>Pide información</Link>
                 </div>
               </motion.div>
+
               <motion.div className={styles.priceCardModern} whileHover={{ y: -5 }}>
                 <div className={styles.priceCardHeader}>
-                  <h3>Bono 5 clases</h3>
-                  <p className={styles.price}><span>23€</span> / Clase</p>
-                  <p className={styles.subtitle}>Pago único de 115 €</p>
+                  <h3>Dos clases semanales</h3>
+                  <p className={styles.price}><span>300€</span> / mes</p>
                 </div>
+                <ul className={styles.pricingFeatures}>
+                  <li>Dos clases semanales</li>
+                  <li>Plan de estudios</li>
+                  <li>Material incluido</li>
+                  <li>Tareas para el trabajo autónomo</li>
+                  <li>Corrección de Writings</li>
+                  <li>Simulacros de Speaking</li>
+                </ul>
                 <div className={styles.priceCardFooter}>
                   <Link href="#contacto" className={`${styles.btnFull} btn btn-primary`}>Pide información</Link>
                 </div>
@@ -86,7 +102,7 @@ export default function PricingSection() {
               <motion.div className={`${styles.priceCardModern} ${styles.featuredPriceCard} ${styles.groupPlanFeatured}`} whileHover={{ y: -5 }}>
                 <div className={styles.priceCardHeader}>
                   <h3>Pago mensual</h3>
-                  <p className={styles.price}><span>75€</span>/mes</p>
+                  <p className={styles.price}><span>90€</span>/mes</p>
                   <p className={styles.subtitle}>Grupos reducidos por niveles</p>
                 </div>
                 <ul className={styles.pricingFeatures}>
