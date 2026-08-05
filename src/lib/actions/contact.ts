@@ -28,7 +28,7 @@ export async function sendEmail(formData: FormData) {
     const mailOptions = {
       from: `"${name}" <${process.env.SMTP_USER}>`,
       replyTo: email as string,
-      to: "rafadriveclase@gmail.com", // Updated to Bimalingua email
+      to: "bimalingua@gmail.com",
       subject: `Nueva consulta web de ${name}`,
       text: `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\n\nMensaje:\n${message}\n\nConsentimiento RGPD: Aceptado`,
       html: `
