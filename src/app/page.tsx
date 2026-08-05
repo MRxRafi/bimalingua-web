@@ -38,9 +38,9 @@ export default function Home() {
             <div className={`${styles.heroContent} container`}>
               <FadeIn className={styles.heroText}>
                 <h1 className="heading">
-                  Clases de inglés online para <span className={styles.highlight}>preparar el examen de Cambridge</span>
+                  Aprueba tu examen de Cambridge con <span className={styles.highlight}>un método claro y sin perder el tiempo</span>
                 </h1>
-                <h2>Certifica tu nivel de inglés para conseguir más oportunidades.</h2>
+                <h2>Clases individuales y grupos reducidos impartidos por examinadora de Cambridge. Material actualizado, simulacros reales y feedback personalizado para que llegues al examen con confianza.</h2>
                 <div className={styles.ctaGroup}>
                   <Link href="#contacto" className="btn btn-primary">Empezar ahora</Link>
                   <Link href="#precios" className="btn btn-secondary">Ver precios</Link>
@@ -57,6 +57,54 @@ export default function Home() {
                   className={styles.heroImage}
                   priority
                 />
+              </FadeIn>
+            </div>
+          </section>
+
+          <section className={styles.trustBanner}>
+            <div className="container">
+              <FadeIn delay={0.2}>
+                <div className={styles.trustGrid}>
+                  <div className={styles.trustCard}>
+                    <div className={styles.trustIconWrapper}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                    </div>
+                    <div className={styles.trustTextWrapper}>
+                      <span className={styles.trustNumber}>+80</span>
+                      <span className={styles.trustLabel}>Alumnos preparados</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.trustCard}>
+                    <div className={styles.trustIconWrapper}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+                    </div>
+                    <div className={styles.trustTextWrapper}>
+                      <span className={styles.trustNumber}>97%</span>
+                      <span className={styles.trustLabel}>Tasa de aprobados</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.trustCard}>
+                    <div className={styles.trustIconWrapper}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
+                    </div>
+                    <div className={styles.trustTextWrapper}>
+                      <span className={styles.trustBadgeTag}>Examinadora</span>
+                      <span className={styles.trustLabel}>Oficial de Cambridge</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.trustCard}>
+                    <div className={styles.trustIconWrapper}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    </div>
+                    <div className={styles.trustTextWrapper}>
+                      <span className={styles.trustNumber}>+8 años</span>
+                      <span className={styles.trustLabel}>Preparando exámenes</span>
+                    </div>
+                  </div>
+                </div>
               </FadeIn>
             </div>
           </section>
