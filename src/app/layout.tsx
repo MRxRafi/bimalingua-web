@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SmoothScrollHandler from "@/components/SmoothScrollHandler";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -83,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${outfit.variable} ${playfair.variable}`}>
+        <SmoothScrollHandler />
         <Header />
         {children}
         <Footer />
