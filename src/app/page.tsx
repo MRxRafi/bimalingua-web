@@ -87,21 +87,21 @@ export default function Home() {
 
                   <div className={styles.trustCard}>
                     <div className={styles.trustIconWrapper}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
-                    </div>
-                    <div className={styles.trustTextWrapper}>
-                      <span className={styles.trustBadgeTag}>Examinadora</span>
-                      <span className={styles.trustLabel}>Oficial de Cambridge</span>
-                    </div>
-                  </div>
-
-                  <div className={styles.trustCard}>
-                    <div className={styles.trustIconWrapper}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                     </div>
                     <div className={styles.trustTextWrapper}>
                       <span className={styles.trustNumber}>+8 años</span>
                       <span className={styles.trustLabel}>Preparando exámenes</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.trustCard}>
+                    <div className={styles.trustIconWrapper}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
+                    </div>
+                    <div className={styles.trustTextWrapper}>
+                      <span className={styles.trustBadgeTag}>Examinadora</span>
+                      <span className={styles.trustLabel}>Oficial de Cambridge</span>
                     </div>
                   </div>
                 </div>
