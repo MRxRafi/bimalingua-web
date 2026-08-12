@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { BlogPost } from "@/lib/blog-data";
-import styles from "./page.module.css";
 
 export default function BlogListingClient({ blogPosts }: { blogPosts: BlogPost[] }) {
   const fadeInUp = {
